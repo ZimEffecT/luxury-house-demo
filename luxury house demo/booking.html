@@ -1,0 +1,2411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Book Your Stay | The DSL House</title>
+
+    <meta
+        name="description"
+        content="Reserve your stay at The DSL House."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           BOOKING HERO
+        ===================================================== */
+
+        .booking-hero {
+
+            position: relative;
+
+            min-height: 58vh;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            padding: 0 5% 75px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.82),
+                    rgba(0,0,0,.25)
+                ),
+                url("https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .booking-hero-content {
+
+            width: min(1240px, 100%);
+
+            margin: auto;
+
+        }
+
+
+        .booking-hero h1 {
+
+            max-width: 850px;
+
+            margin-top: 22px;
+
+            font-family: var(--serif);
+
+            font-size: clamp(55px, 8vw, 100px);
+
+            font-weight: 400;
+
+            line-height: .95;
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .booking-hero h1 em {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+
+        }
+
+
+        .booking-hero p {
+
+            max-width: 500px;
+
+            margin-top: 25px;
+
+            color: rgba(255,255,255,.7);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           BOOKING AREA
+        ===================================================== */
+
+        .booking-section {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 110px 0 140px;
+
+        }
+
+
+        .booking-layout {
+
+            display: grid;
+
+            grid-template-columns: 1fr 390px;
+
+            gap: 35px;
+
+            align-items: start;
+
+        }
+
+
+        /* =====================================================
+           BOOKING FORM CARD
+        ===================================================== */
+
+        .booking-card {
+
+            background: #11110f;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            padding: 50px;
+
+        }
+
+
+        .booking-card-header {
+
+            padding-bottom: 30px;
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .booking-card-header h2 {
+
+            margin-top: 15px;
+
+            font-size: 38px;
+
+        }
+
+
+        .booking-card-header p {
+
+            max-width: 550px;
+
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           STEP INDICATOR
+        ===================================================== */
+
+        .booking-steps {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            margin: 35px 0 40px;
+
+        }
+
+
+        .booking-step {
+
+            position: relative;
+
+            padding-bottom: 18px;
+
+            border-bottom: 1px solid rgba(255,255,255,.12);
+
+            color: rgba(255,255,255,.35);
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .booking-step.active {
+
+            color: var(--gold-light);
+
+            border-color: var(--gold);
+
+        }
+
+
+        .booking-step span {
+
+            display: inline-grid;
+
+            width: 25px;
+
+            height: 25px;
+
+            margin-right: 8px;
+
+            place-items: center;
+
+            border: 1px solid currentColor;
+
+            border-radius: 50%;
+
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .booking-form {
+
+            display: block;
+
+        }
+
+
+        .booking-form-section {
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .booking-form-section h3 {
+
+            margin-bottom: 22px;
+
+            font-family: var(--serif);
+
+            font-size: 25px;
+
+            font-weight: 400;
+
+        }
+
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .form-group label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: rgba(255,255,255,.55);
+
+            font-size: 8px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 15px;
+
+            outline: none;
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            background: #0a0a09;
+
+            color: var(--cream);
+
+            font-family: inherit;
+
+            font-size: 11px;
+
+            transition: .3s ease;
+
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: var(--gold);
+
+        }
+
+
+        .form-group textarea {
+
+            min-height: 110px;
+
+            resize: vertical;
+
+        }
+
+
+        /* =====================================================
+           ROOM SELECTOR
+        ===================================================== */
+
+        .room-options {
+
+            display: grid;
+
+            gap: 12px;
+
+        }
+
+
+        .room-option {
+
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns:
+                110px 1fr auto;
+
+            gap: 18px;
+
+            align-items: center;
+
+            padding: 12px;
+
+            border: 1px solid rgba(255,255,255,.09);
+
+            cursor: pointer;
+
+            transition: .3s ease;
+
+        }
+
+
+        .room-option:hover {
+
+            border-color:
+                rgba(200,169,107,.45);
+
+        }
+
+
+        .room-option.selected {
+
+            border-color: var(--gold);
+
+            background:
+                rgba(200,169,107,.05);
+
+        }
+
+
+        .room-option input {
+
+            position: absolute;
+
+            opacity: 0;
+
+        }
+
+
+        .room-image {
+
+            width: 110px;
+
+            height: 80px;
+
+            object-fit: cover;
+
+        }
+
+
+        .room-info h4 {
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+
+            font-weight: 400;
+
+        }
+
+
+        .room-info p {
+
+            margin-top: 5px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+        }
+
+
+        .room-price {
+
+            text-align: right;
+
+        }
+
+
+        .room-price strong {
+
+            display: block;
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+
+            font-weight: 400;
+
+        }
+
+
+        .room-price span {
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+        }
+
+
+        /* =====================================================
+           TERMS
+        ===================================================== */
+
+        .terms {
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: flex-start;
+
+            margin-top: 25px;
+
+        }
+
+
+        .terms input {
+
+            margin-top: 3px;
+
+            accent-color: var(--gold);
+
+        }
+
+
+        .terms label {
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           SUBMIT
+        ===================================================== */
+
+        .booking-submit {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding: 18px;
+
+            border: none;
+
+            background: var(--gold);
+
+            color: #0a0a09;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            transition: .3s ease;
+
+        }
+
+
+        .booking-submit:hover {
+
+            background: var(--gold-light);
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =====================================================
+           SUMMARY CARD
+        ===================================================== */
+
+        .booking-summary {
+
+            position: sticky;
+
+            top: 30px;
+
+            overflow: hidden;
+
+            background: #11110f;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .summary-image {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+        }
+
+
+        .summary-content {
+
+            padding: 30px;
+
+        }
+
+
+        .summary-label {
+
+            color: var(--gold);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .summary-content h3 {
+
+            margin-top: 12px;
+
+            font-family: var(--serif);
+
+            font-size: 29px;
+
+            font-weight: 400;
+
+        }
+
+
+        .summary-dates {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            margin-top: 25px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .date-box {
+
+            padding: 18px 0;
+
+        }
+
+
+        .date-box + .date-box {
+
+            padding-left: 20px;
+
+            border-left: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .date-box span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .date-box strong {
+
+            display: block;
+
+            margin-top: 7px;
+
+            font-family: var(--serif);
+
+            font-size: 18px;
+
+            font-weight: 400;
+
+        }
+
+
+        .summary-details {
+
+            margin-top: 20px;
+
+        }
+
+
+        .summary-line {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 9px 0;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+        }
+
+
+        .summary-line strong {
+
+            color: var(--cream);
+
+            font-weight: 400;
+
+        }
+
+
+        .summary-total {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-top: 20px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,.12);
+
+        }
+
+
+        .summary-total span {
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .summary-total strong {
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 28px;
+
+            font-weight: 400;
+
+        }
+
+
+        .summary-note {
+
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: rgba(255,255,255,.025);
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           CONFIRMATION
+        ===================================================== */
+
+        .confirmation {
+
+            display: none;
+
+            text-align: center;
+
+            padding: 80px 40px;
+
+        }
+
+
+        .confirmation.show {
+
+            display: block;
+
+        }
+
+
+        .confirmation-icon {
+
+            width: 75px;
+
+            height: 75px;
+
+            margin: auto;
+
+            display: grid;
+
+            place-items: center;
+
+            border: 1px solid var(--gold);
+
+            border-radius: 50%;
+
+            color: var(--gold-light);
+
+            font-size: 25px;
+
+        }
+
+
+        .confirmation h2 {
+
+            margin-top: 25px;
+
+            font-size: 45px;
+
+        }
+
+
+        .confirmation p {
+
+            max-width: 500px;
+
+            margin: 20px auto;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           ASSURANCE BAR
+        ===================================================== */
+
+        .booking-assurance {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .assurance-item {
+
+            padding: 35px;
+
+            text-align: center;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .assurance-item:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .assurance-item span {
+
+            display: block;
+
+            color: var(--gold);
+
+            font-size: 18px;
+
+        }
+
+
+        .assurance-item h4 {
+
+            margin-top: 10px;
+
+            font-family: var(--serif);
+
+            font-size: 19px;
+
+            font-weight: 400;
+
+        }
+
+
+        .assurance-item p {
+
+            margin-top: 7px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 1000px) {
+
+            .booking-layout {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .booking-summary {
+
+                position: static;
+
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            .booking-hero {
+
+                min-height: 600px;
+
+                padding-bottom: 60px;
+
+            }
+
+
+            .booking-hero h1 {
+
+                font-size: 57px;
+
+                letter-spacing: -2px;
+
+            }
+
+
+            .booking-section {
+
+                padding: 80px 0 100px;
+
+            }
+
+
+            .booking-card {
+
+                padding: 28px 20px;
+
+            }
+
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+
+            }
+
+
+            .room-option {
+
+                grid-template-columns:
+                    85px 1fr;
+
+            }
+
+
+            .room-image {
+
+                width: 85px;
+
+                height: 75px;
+
+            }
+
+
+            .room-price {
+
+                display: none;
+
+            }
+
+
+            .booking-assurance {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .assurance-item {
+
+                border-right: none;
+
+                border-bottom: 1px solid rgba(255,255,255,.08);
+
+            }
+
+
+            .assurance-item:last-child {
+
+                border-bottom: none;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-main">
+            DSL
+        </span>
+
+        <span class="logo-sub">
+            HOUSE
+        </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="rooms.html">
+            Rooms
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="experiences.html">
+            Experiences
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a
+        href="booking.html"
+        class="nav-button"
+    >
+        Book Your Stay
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="booking-hero">
+
+    <div class="booking-hero-content">
+
+        <span class="section-label">
+            RESERVATIONS
+        </span>
+
+        <h1>
+
+            Your stay
+            <em>starts here.</em>
+
+        </h1>
+
+        <p>
+
+            Choose your dates, select your room and let us
+            take care of the rest.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section class="booking-section">
+
+    <div class="booking-layout">
+
+
+        <!-- =================================================
+             FORM
+        ================================================== -->
+
+        <div class="booking-card">
+
+
+            <div class="booking-card-header">
+
+                <span class="section-label">
+                    RESERVE YOUR ROOM
+                </span>
+
+                <h2>
+                    Make it yours.
+                </h2>
+
+                <p>
+
+                    Tell us when you're coming and we'll prepare
+                    everything for your arrival.
+
+                </p>
+
+            </div>
+
+
+            <!-- STEPS -->
+
+            <div class="booking-steps">
+
+                <div class="booking-step active">
+
+                    <span>1</span>
+
+                    Your Stay
+
+                </div>
+
+
+                <div class="booking-step">
+
+                    <span>2</span>
+
+                    Your Details
+
+                </div>
+
+
+                <div class="booking-step">
+
+                    <span>3</span>
+
+                    Confirmation
+
+                </div>
+
+            </div>
+
+
+            <form
+                class="booking-form"
+                id="bookingForm"
+            >
+
+
+                <!-- =================================================
+                     DATES
+                ================================================== -->
+
+                <div class="booking-form-section">
+
+                    <h3>
+                        When are you staying?
+                    </h3>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="checkIn">
+                                Check-in
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkIn"
+                                name="checkIn"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="checkOut">
+                                Check-out
+                            </label>
+
+                            <input
+                                type="date"
+                                id="checkOut"
+                                name="checkOut"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="adults">
+                                Adults
+                            </label>
+
+                            <select
+                                id="adults"
+                                name="adults"
+                            >
+
+                                <option value="1">
+                                    1 Adult
+                                </option>
+
+                                <option value="2" selected>
+                                    2 Adults
+                                </option>
+
+                                <option value="3">
+                                    3 Adults
+                                </option>
+
+                                <option value="4">
+                                    4 Adults
+                                </option>
+
+                                <option value="5">
+                                    5 Adults
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="children">
+                                Children
+                            </label>
+
+                            <select
+                                id="children"
+                                name="children"
+                            >
+
+                                <option value="0">
+                                    No Children
+                                </option>
+
+                                <option value="1">
+                                    1 Child
+                                </option>
+
+                                <option value="2">
+                                    2 Children
+                                </option>
+
+                                <option value="3">
+                                    3 Children
+                                </option>
+
+                                <option value="4">
+                                    4 Children
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     ROOM
+                ================================================== -->
+
+                <div class="booking-form-section">
+
+                    <h3>
+                        Choose your room.
+                    </h3>
+
+
+                    <div class="room-options">
+
+
+                        <label class="room-option selected">
+
+                            <input
+                                type="radio"
+                                name="room"
+                                value="montclair-suite"
+                                data-price="1850"
+                                checked
+                            >
+
+                            <img
+                                class="room-image"
+                                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=85"
+                                alt="DSL Suite"
+                            >
+
+
+                            <div class="room-info">
+
+                                <h4>
+                                    DSL Suite
+                                </h4>
+
+                                <p>
+                                    King bed · Private balcony
+                                </p>
+
+                            </div>
+
+
+                            <div class="room-price">
+
+                                <strong>
+                                    E1,850
+                                </strong>
+
+                                <span>
+                                    per night
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="room-option">
+
+                            <input
+                                type="radio"
+                                name="room"
+                                value="garden-suite"
+                                data-price="1450"
+                            >
+
+                            <img
+                                class="room-image"
+                                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=85"
+                                alt="Garden Suite"
+                            >
+
+
+                            <div class="room-info">
+
+                                <h4>
+                                    Garden Suite
+                                </h4>
+
+                                <p>
+                                    Queen bed · Garden access
+                                </p>
+
+                            </div>
+
+
+                            <div class="room-price">
+
+                                <strong>
+                                    E1,450
+                                </strong>
+
+                                <span>
+                                    per night
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                        <label class="room-option">
+
+                            <input
+                                type="radio"
+                                name="room"
+                                value="deluxe-room"
+                                data-price="1100"
+                            >
+
+                            <img
+                                class="room-image"
+                                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=85"
+                                alt="Deluxe Room"
+                            >
+
+
+                            <div class="room-info">
+
+                                <h4>
+                                    Deluxe Room
+                                </h4>
+
+                                <p>
+                                    Queen bed · Premium amenities
+                                </p>
+
+                            </div>
+
+
+                            <div class="room-price">
+
+                                <strong>
+                                    E1,100
+                                </strong>
+
+                                <span>
+                                    per night
+                                </span>
+
+                            </div>
+
+                        </label>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     GUEST DETAILS
+                ================================================== -->
+
+                <div class="booking-form-section">
+
+                    <h3>
+                        Tell us about yourself.
+                    </h3>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="First name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Last name"
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-row">
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+268 ..."
+                                required
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="requests">
+                            Special Requests
+                        </label>
+
+                        <textarea
+                            id="requests"
+                            name="requests"
+                            placeholder="Birthday celebration, airport transfer, dietary requirements..."
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <div class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required
+                    >
+
+                    <label for="terms">
+
+                        I confirm that the information provided
+                        is correct and agree to the property's
+                        booking terms and conditions.
+
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="booking-submit"
+                >
+
+                    Request Reservation
+
+                    <span>
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- =================================================
+                 CONFIRMATION
+            ================================================== -->
+
+            <div
+                class="confirmation"
+                id="confirmation"
+            >
+
+                <div class="confirmation-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Request received.
+                </h2>
+
+                <p>
+
+                    Thank you for choosing The DSL House.
+                    Your reservation request has been received.
+                    Our team will contact you shortly to confirm
+                    availability and finalize your stay.
+
+                </p>
+
+
+                <a
+                    href="index.html"
+                    class="btn btn-gold"
+                >
+
+                    Return Home
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <aside class="booking-summary">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=90"
+                alt="DSL Suite"
+                class="summary-image"
+                id="summaryImage"
+            >
+
+
+            <div class="summary-content">
+
+                <span class="summary-label">
+                    YOUR SELECTION
+                </span>
+
+                <h3 id="summaryRoom">
+                    DSL Suite
+                </h3>
+
+
+                <div class="summary-dates">
+
+                    <div class="date-box">
+
+                        <span>
+                            Check-in
+                        </span>
+
+                        <strong id="summaryCheckIn">
+                            Select date
+                        </strong>
+
+                    </div>
+
+
+                    <div class="date-box">
+
+                        <span>
+                            Check-out
+                        </span>
+
+                        <strong id="summaryCheckOut">
+                            Select date
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-details">
+
+                    <div class="summary-line">
+
+                        <span>
+                            Guests
+                        </span>
+
+                        <strong id="summaryGuests">
+                            2 Adults
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Nights
+                        </span>
+
+                        <strong id="summaryNights">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-line">
+
+                        <span>
+                            Rate
+                        </span>
+
+                        <strong id="summaryRate">
+                            E1,850 / night
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Estimated total
+                    </span>
+
+                    <strong id="summaryTotal">
+                        E0
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-note">
+
+                    No payment is taken at this stage.
+                    Your reservation will be confirmed
+                    by our team after availability is checked.
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ASSURANCE
+===================================================== -->
+
+<section class="booking-assurance">
+
+
+    <div class="assurance-item">
+
+        <span>
+            ✦
+        </span>
+
+        <h4>
+            Personal Service
+        </h4>
+
+        <p>
+            A real team behind every reservation.
+        </p>
+
+    </div>
+
+
+    <div class="assurance-item">
+
+        <span>
+            ✓
+        </span>
+
+        <h4>
+            Flexible Enquiries
+        </h4>
+
+        <p>
+            Tell us what you need and we'll help.
+        </p>
+
+    </div>
+
+
+    <div class="assurance-item">
+
+        <span>
+            ♢
+        </span>
+
+        <h4>
+            Thoughtful Stays
+        </h4>
+
+        <p>
+            Every detail considered before you arrive.
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-main">
+                    DSL
+                </span>
+
+                <span class="logo-sub">
+                    HOUSE
+                </span>
+
+            </a>
+
+
+            <p>
+
+                Refined stays.
+                Genuine hospitality.
+                Unforgettable moments.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="rooms.html">
+                Rooms & Suites
+            </a>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="experiences.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTACT
+            </h4>
+
+            <a href="tel:+26800000000">
+                +268 0000 0000
+            </a>
+
+            <a href="mailto:hello@dslhouse.com">
+                hello@dslhouse.com
+            </a>
+
+            <span>
+                Eswatini
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                FOLLOW
+            </h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The DSL House.
+            All rights reserved.
+        </span>
+
+        <span>
+            Designed by
+            <strong>
+                DSL Digital
+            </strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     BOOKING JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    const bookingForm =
+        document.getElementById("bookingForm");
+
+    const confirmation =
+        document.getElementById("confirmation");
+
+
+    const checkIn =
+        document.getElementById("checkIn");
+
+    const checkOut =
+        document.getElementById("checkOut");
+
+
+    const adults =
+        document.getElementById("adults");
+
+    const children =
+        document.getElementById("children");
+
+
+    const summaryRoom =
+        document.getElementById("summaryRoom");
+
+    const summaryCheckIn =
+        document.getElementById("summaryCheckIn");
+
+    const summaryCheckOut =
+        document.getElementById("summaryCheckOut");
+
+    const summaryGuests =
+        document.getElementById("summaryGuests");
+
+    const summaryNights =
+        document.getElementById("summaryNights");
+
+    const summaryRate =
+        document.getElementById("summaryRate");
+
+    const summaryTotal =
+        document.getElementById("summaryTotal");
+
+    const summaryImage =
+        document.getElementById("summaryImage");
+
+
+    /* =====================================================
+       SET MINIMUM DATE
+    ===================================================== */
+
+    const today =
+        new Date().toISOString().split("T")[0];
+
+    checkIn.min = today;
+
+    checkOut.min = today;
+
+
+    /* =====================================================
+       ROOM SELECTION
+    ===================================================== */
+
+    const roomOptions =
+        document.querySelectorAll(".room-option");
+
+
+    roomOptions.forEach(option => {
+
+        const radio =
+            option.querySelector("input");
+
+        radio.addEventListener("change", () => {
+
+            roomOptions.forEach(room => {
+
+                room.classList.remove("selected");
+
+            });
+
+
+            option.classList.add("selected");
+
+            updateSummary();
+
+        });
+
+    });
+
+
+    /* =====================================================
+       DATE VALIDATION
+    ===================================================== */
+
+    checkIn.addEventListener(
+        "change",
+        () => {
+
+            checkOut.min =
+                checkIn.value;
+
+            updateSummary();
+
+        }
+    );
+
+
+    checkOut.addEventListener(
+        "change",
+        updateSummary
+    );
+
+
+    adults.addEventListener(
+        "change",
+        updateSummary
+    );
+
+
+    children.addEventListener(
+        "change",
+        updateSummary
+    );
+
+
+    /* =====================================================
+       UPDATE SUMMARY
+    ===================================================== */
+
+    function updateSummary() {
+
+
+        const selectedRoom =
+            document.querySelector(
+                'input[name="room"]:checked'
+            );
+
+
+        if (!selectedRoom) return;
+
+
+        const roomName =
+            selectedRoom
+                .closest(".room-option")
+                .querySelector("h4")
+                .textContent
+                .trim();
+
+
+        const price =
+            Number(
+                selectedRoom.dataset.price
+            );
+
+
+        summaryRoom.textContent =
+            roomName;
+
+
+        summaryRate.textContent =
+            "E" +
+            price.toLocaleString() +
+            " / night";
+
+
+        const roomImage =
+            selectedRoom
+                .closest(".room-option")
+                .querySelector("img")
+                .src;
+
+
+        summaryImage.src =
+            roomImage;
+
+
+        /* Guests */
+
+        const adultCount =
+            Number(adults.value);
+
+
+        const childCount =
+            Number(children.value);
+
+
+        let guestText =
+            adultCount +
+            (adultCount === 1
+                ? " Adult"
+                : " Adults");
+
+
+        if (childCount > 0) {
+
+            guestText +=
+                " · " +
+                childCount +
+                (childCount === 1
+                    ? " Child"
+                    : " Children");
+
+        }
+
+
+        summaryGuests.textContent =
+            guestText;
+
+
+        /* Dates */
+
+        if (checkIn.value) {
+
+            summaryCheckIn.textContent =
+                formatDate(checkIn.value);
+
+        }
+
+
+        if (checkOut.value) {
+
+            summaryCheckOut.textContent =
+                formatDate(checkOut.value);
+
+        }
+
+
+        /* Nights */
+
+        if (
+            checkIn.value &&
+            checkOut.value
+        ) {
+
+
+            const start =
+                new Date(
+                    checkIn.value
+                );
+
+
+            const end =
+                new Date(
+                    checkOut.value
+                );
+
+
+            const difference =
+                end - start;
+
+
+            const nights =
+                Math.ceil(
+                    difference /
+                    (1000 * 60 * 60 * 24)
+                );
+
+
+            if (nights > 0) {
+
+                summaryNights.textContent =
+                    nights;
+
+
+                const total =
+                    nights * price;
+
+
+                summaryTotal.textContent =
+                    "E" +
+                    total.toLocaleString();
+
+            } else {
+
+                summaryNights.textContent =
+                    "0";
+
+                summaryTotal.textContent =
+                    "E0";
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       FORMAT DATE
+    ===================================================== */
+
+    function formatDate(dateString) {
+
+        const date =
+            new Date(
+                dateString + "T00:00:00"
+            );
+
+
+        return date.toLocaleDateString(
+            "en-GB",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       SUBMIT
+    ===================================================== */
+
+    bookingForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            if (
+                !checkIn.value ||
+                !checkOut.value
+            ) {
+
+                alert(
+                    "Please select your check-in and check-out dates."
+                );
+
+                return;
+
+            }
+
+
+            const start =
+                new Date(checkIn.value);
+
+            const end =
+                new Date(checkOut.value);
+
+
+            if (end <= start) {
+
+                alert(
+                    "Check-out must be after check-in."
+                );
+
+                return;
+
+            }
+
+
+            bookingForm.style.display =
+                "none";
+
+
+            confirmation.classList.add(
+                "show"
+            );
+
+
+            confirmation.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+    );
+
+
+    updateSummary();
+
+</script>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DSL Suite | The DSL House</title>
+
+    <meta name="description"
+          content="Discover the Montclair Suite at The Montclair House — an elegant private retreat designed for comfort, privacy and exceptional stays.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+
+        /* =====================================================
+           ROOM DETAILS PAGE
+        ===================================================== */
+
+        .room-detail-hero {
+            position: relative;
+            height: 78vh;
+            min-height: 650px;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 0 5% 75px;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.78),
+                    rgba(0,0,0,.08) 70%
+                ),
+                url("https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=2400&q=95")
+                center / cover no-repeat;
+        }
+
+        .room-detail-hero-content {
+            width: min(1240px, 100%);
+            margin: auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 30px;
+
+            color: rgba(255,255,255,.7);
+
+            font-size: 9px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            transition: .3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--gold);
+        }
+
+        .room-detail-hero h1 {
+            font-family: var(--serif);
+            font-size: clamp(55px, 8vw, 100px);
+            font-weight: 400;
+            line-height: .95;
+            letter-spacing: -4px;
+        }
+
+        .room-detail-hero h1 em {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .hero-room-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+
+            margin-top: 28px;
+        }
+
+        .hero-room-meta span {
+            color: rgba(255,255,255,.75);
+
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .hero-room-meta strong {
+            color: var(--gold);
+            margin-right: 6px;
+        }
+
+
+        /* =====================================================
+           CONTENT LAYOUT
+        ===================================================== */
+
+        .room-detail-layout {
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 120px 0;
+
+            display: grid;
+            grid-template-columns: 1.35fr .65fr;
+            gap: 100px;
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT
+        ===================================================== */
+
+        .detail-section {
+            padding-bottom: 65px;
+            margin-bottom: 65px;
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .detail-section:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: var(--gold);
+
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .detail-section h2 {
+            margin-top: 18px;
+
+            font-size: clamp(38px, 4vw, 54px);
+        }
+
+        .detail-section h2 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .detail-section > p {
+            max-width: 700px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 2;
+        }
+
+
+        /* =====================================================
+           HIGHLIGHTS
+        ===================================================== */
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 45px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+            border-left: 1px solid rgba(255,255,255,.08);
+        }
+
+        .highlight {
+            padding: 25px;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .highlight-icon {
+            color: var(--gold);
+
+            font-size: 22px;
+        }
+
+        .highlight strong {
+            display: block;
+
+            margin-top: 15px;
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .highlight span {
+            display: block;
+
+            margin-top: 6px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           AMENITIES
+        ===================================================== */
+
+        .amenity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            margin-top: 40px;
+
+            gap: 0;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            padding: 17px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.06);
+
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .amenity-item span {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ===================================================== */
+
+        .mini-gallery {
+            display: grid;
+            grid-template-columns: 1.3fr .7fr;
+            grid-template-rows: 220px 220px;
+
+            gap: 10px;
+
+            margin-top: 40px;
+        }
+
+        .gallery-photo {
+            background-position: center;
+            background-size: cover;
+        }
+
+        .gallery-photo.large {
+            grid-row: 1 / 3;
+        }
+
+        .gallery-photo.one {
+            background-image:
+                url("https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=90");
+        }
+
+        .gallery-photo.two {
+            background-image:
+                url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=90");
+        }
+
+        .gallery-photo.three {
+            background-image:
+                url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=90");
+        }
+
+
+        /* =====================================================
+           POLICIES
+        ===================================================== */
+
+        .policy-list {
+            margin-top: 35px;
+        }
+
+        .policy {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+
+            padding: 18px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .policy strong {
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .policy span {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           BOOKING CARD
+        ===================================================== */
+
+        .booking-column {
+            position: relative;
+        }
+
+        .booking-card {
+            position: sticky;
+            top: 110px;
+
+            padding: 35px;
+
+            background: #121210;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            box-shadow: 0 30px 70px rgba(0,0,0,.25);
+        }
+
+        .booking-card-label {
+            color: var(--gold);
+
+            font-size: 8px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+
+        .booking-card h3 {
+            margin-top: 15px;
+
+            font-family: var(--serif);
+
+            font-size: 34px;
+            font-weight: 400;
+        }
+
+        .booking-card h3 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .booking-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+
+            margin-top: 25px;
+
+            padding-bottom: 25px;
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .booking-price strong {
+            font-family: var(--serif);
+
+            font-size: 32px;
+
+            font-weight: 400;
+        }
+
+        .booking-price span {
+            color: var(--muted);
+
+            font-size: 9px;
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           FORM
+        ===================================================== */
+
+        .booking-form {
+            margin-top: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: var(--muted);
+
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid rgba(255,255,255,.1);
+
+            outline: none;
+
+            background: #0c0c0b;
+            color: var(--cream);
+
+            font-size: 11px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+        }
+
+        .check-button {
+            width: 100%;
+
+            margin-top: 8px;
+
+            border: none;
+
+            cursor: pointer;
+
+            justify-content: center;
+        }
+
+        .booking-note {
+            margin-top: 18px;
+
+            color: #777;
+
+            font-size: 8px;
+
+            text-align: center;
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           QUICK INFO
+        ===================================================== */
+
+        .quick-info {
+            margin-top: 30px;
+        }
+
+        .quick-info-item {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            padding: 13px 0;
+
+            color: var(--muted);
+
+            font-size: 10px;
+        }
+
+        .quick-info-item span {
+            color: var(--gold);
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 950px) {
+
+            .room-detail-layout {
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+            }
+
+            .booking-card {
+                position: relative;
+                top: auto;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .room-detail-hero {
+                height: 650px;
+                min-height: 650px;
+
+                padding-bottom: 55px;
+            }
+
+            .room-detail-hero h1 {
+                font-size: 57px;
+                letter-spacing: -2px;
+            }
+
+            .hero-room-meta {
+                gap: 15px;
+            }
+
+            .room-detail-layout {
+                padding: 80px 0;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .amenity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .mini-gallery {
+                grid-template-columns: 1fr;
+                grid-template-rows: 350px 200px 200px;
+            }
+
+            .gallery-photo.large {
+                grid-row: auto;
+            }
+
+            .booking-card {
+                padding: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-main">
+            DSL
+        </span>
+
+        <span class="logo-sub">
+            HOUSE
+        </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="rooms.html" class="active">
+            Rooms
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="experiences.html">
+            Experiences
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a href="booking.html" class="nav-button">
+        Book Your Stay
+    </a>
+
+
+    <button class="menu-toggle" aria-label="Open menu">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="room-detail-hero">
+
+    <div class="room-detail-hero-content">
+
+        <a href="rooms.html" class="back-link">
+            ← Back to Rooms
+        </a>
+
+        <span class="section-label">
+            01 · DELUXE ACCOMMODATION
+        </span>
+
+        <h1>
+            DSL
+            <em>Suite.</em>
+        </h1>
+
+
+        <div class="hero-room-meta">
+
+            <span>
+                <strong>02</strong>
+                Guests
+            </span>
+
+            <span>
+                <strong>01</strong>
+                King Bed
+            </span>
+
+            <span>
+                <strong>42m²</strong>
+                Room Size
+            </span>
+
+            <span>
+                <strong>01</strong>
+                Private Bathroom
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="room-detail-layout">
+
+
+    <!-- =================================================
+         LEFT COLUMN
+    ================================================== -->
+
+    <div class="room-main-content">
+
+
+        <!-- INTRO -->
+
+        <section class="detail-section">
+
+            <span class="detail-label">
+                THE DSL SUITE
+            </span>
+
+            <h2>
+                Your private
+                <span>sanctuary.</span>
+            </h2>
+
+            <p>
+                Designed for guests who appreciate space, comfort and
+                understated luxury, the DSL Suite is our signature
+                accommodation. Every element has been carefully selected
+                to create an environment that feels sophisticated yet
+                completely relaxed.
+            </p>
+
+            <p>
+                Sink into premium bedding after a long day, enjoy a quiet
+                morning with a cup of coffee, or simply take your time.
+                This is your space to slow down.
+            </p>
+
+
+            <div class="highlights">
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ◇
+                    </div>
+
+                    <strong>
+                        King Bed
+                    </strong>
+
+                    <span>
+                        Premium bedding
+                    </span>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ◌
+                    </div>
+
+                    <strong>
+                        42 m²
+                    </strong>
+
+                    <span>
+                        Spacious interior
+                    </span>
+
+                </div>
+
+
+                <div class="highlight">
+
+                    <div class="highlight-icon">
+                        ⌖
+                    </div>
+
+                    <strong>
+                        Private
+                    </strong>
+
+                    <span>
+                        Peaceful retreat
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AMENITIES -->
+
+        <section class="detail-section">
+
+            <span class="detail-label">
+                EVERYTHING CONSIDERED
+            </span>
+
+            <h2>
+                Suite
+                <span>amenities.</span>
+            </h2>
+
+
+            <div class="amenity-list">
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    King-size premium bed
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    High-speed Wi-Fi
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Air conditioning
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Smart television
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Private bathroom
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Premium toiletries
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Tea & coffee station
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Complimentary breakfast
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    Hairdryer
+                </div>
+
+                <div class="amenity-item">
+                    <span>✦</span>
+                    In-room safe
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section class="detail-section">
+
+            <span class="detail-label">
+                TAKE A CLOSER LOOK
+            </span>
+
+            <h2>
+                Inside the
+                <span>suite.</span>
+            </h2>
+
+
+            <div class="mini-gallery">
+
+                <div class="gallery-photo large one"></div>
+
+                <div class="gallery-photo two"></div>
+
+                <div class="gallery-photo three"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- POLICIES -->
+
+        <section class="detail-section">
+
+            <span class="detail-label">
+                GOOD TO KNOW
+            </span>
+
+            <h2>
+                Stay
+                <span>details.</span>
+            </h2>
+
+
+            <div class="policy-list">
+
+                <div class="policy">
+
+                    <strong>
+                        Check-in
+                    </strong>
+
+                    <span>
+                        From 14:00
+                    </span>
+
+                </div>
+
+
+                <div class="policy">
+
+                    <strong>
+                        Check-out
+                    </strong>
+
+                    <span>
+                        Until 10:00
+                    </span>
+
+                </div>
+
+
+                <div class="policy">
+
+                    <strong>
+                        Breakfast
+                    </strong>
+
+                    <span>
+                        Included
+                    </span>
+
+                </div>
+
+
+                <div class="policy">
+
+                    <strong>
+                        Cancellation
+                    </strong>
+
+                    <span>
+                        Free cancellation up to 48 hours
+                    </span>
+
+                </div>
+
+
+                <div class="policy">
+
+                    <strong>
+                        Children
+                    </strong>
+
+                    <span>
+                        Welcome
+                    </span>
+
+                </div>
+
+
+                <div class="policy">
+
+                    <strong>
+                        Smoking
+                    </strong>
+
+                    <span>
+                        Non-smoking property
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =================================================
+         RIGHT BOOKING COLUMN
+    ================================================== -->
+
+    <aside class="booking-column">
+
+        <div class="booking-card">
+
+            <span class="booking-card-label">
+                RESERVE THIS ROOM
+            </span>
+
+            <h3>
+                DSL
+                <span>Suite</span>
+            </h3>
+
+
+            <div class="booking-price">
+
+                <strong>
+                    E1,850
+                </strong>
+
+                <span>
+                    / NIGHT
+                </span>
+
+            </div>
+
+
+            <form class="booking-form"
+                  action="booking.html"
+                  method="get">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="checkin">
+                            Check In
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkin"
+                            name="checkin"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="checkout">
+                            Check Out
+                        </label>
+
+                        <input
+                            type="date"
+                            id="checkout"
+                            name="checkout"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="guests">
+                        Guests
+                    </label>
+
+                    <select id="guests" name="guests">
+
+                        <option>
+                            1 Guest
+                        </option>
+
+                        <option selected>
+                            2 Guests
+                        </option>
+
+                        <option>
+                            3 Guests
+                        </option>
+
+                        <option>
+                            4 Guests
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-gold check-button">
+
+                    Check Availability
+                    <span>→</span>
+
+                </button>
+
+            </form>
+
+
+            <p class="booking-note">
+                You won't be charged yet. Availability will be
+                confirmed before your reservation is finalized.
+            </p>
+
+
+            <div class="quick-info">
+
+                <div class="quick-info-item">
+
+                    <span>✓</span>
+
+                    Complimentary breakfast
+
+                </div>
+
+
+                <div class="quick-info-item">
+
+                    <span>✓</span>
+
+                    Free high-speed Wi-Fi
+
+                </div>
+
+
+                <div class="quick-info-item">
+
+                    <span>✓</span>
+
+                    Secure parking
+
+                </div>
+
+
+                <div class="quick-info-item">
+
+                    <span>✓</span>
+
+                    24-hour guest assistance
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-main">
+                    DSL
+                </span>
+
+                <span class="logo-sub">
+                    HOUSE
+                </span>
+
+            </a>
+
+            <p>
+                Refined stays. Genuine hospitality.
+                Unforgettable moments.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="rooms.html">
+                Rooms & Suites
+            </a>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="experiences.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTACT
+            </h4>
+
+            <a href="tel:+26800000000">
+                +268 0000 0000
+            </a>
+
+            <a href="mailto:hello@dslhouse.com">
+                hello@dslhouse.com
+            </a>
+
+            <span>
+                Eswatini
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                FOLLOW
+            </h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The DSL House. All rights reserved.
+        </span>
+
+        <span>
+            Designed by <strong>DSL Digital</strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

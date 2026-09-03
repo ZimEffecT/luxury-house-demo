@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rooms & Suites | The DSL House</title>
+
+    <meta name="description"
+          content="Explore the elegant rooms and suites at The DSL House. Designed for comfort, privacy and unforgettable stays.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+
+        /* =====================================================
+           ROOMS PAGE
+        ===================================================== */
+
+        .rooms-hero {
+            position: relative;
+            min-height: 72vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 0 5% 90px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.25)
+                ),
+                url("https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+        }
+
+        .rooms-hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(1240px, 100%);
+            margin: auto;
+        }
+
+        .rooms-hero-content h1 {
+            max-width: 800px;
+
+            margin-top: 25px;
+
+            font-family: var(--serif);
+            font-size: clamp(55px, 8vw, 105px);
+            font-weight: 400;
+            line-height: .95;
+            letter-spacing: -4px;
+        }
+
+        .rooms-hero-content h1 em {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .rooms-hero-content p {
+            max-width: 540px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.72);
+
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .rooms-intro {
+            width: min(900px, 90%);
+
+            margin: auto;
+
+            padding: 130px 0 80px;
+
+            text-align: center;
+        }
+
+        .rooms-intro h2 {
+            margin-top: 25px;
+        }
+
+        .rooms-intro p {
+            max-width: 650px;
+
+            margin: 30px auto 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           ROOM LIST
+        ===================================================== */
+
+        .rooms-list {
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding-bottom: 140px;
+        }
+
+        .luxury-room {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+
+            min-height: 600px;
+
+            margin-bottom: 100px;
+
+            background: #11110f;
+
+            border: 1px solid rgba(255,255,255,.07);
+        }
+
+        .luxury-room.reverse {
+            grid-template-columns: .85fr 1.15fr;
+        }
+
+        .luxury-room.reverse .luxury-room-image {
+            order: 2;
+        }
+
+        .luxury-room.reverse .luxury-room-content {
+            order: 1;
+        }
+
+        .luxury-room-image {
+            position: relative;
+
+            min-height: 600px;
+
+            overflow: hidden;
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .suite-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=90");
+        }
+
+        .garden-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=90");
+        }
+
+        .classic-image {
+            background-image:
+                url("https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&w=1600&q=90");
+        }
+
+        .luxury-room-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.45),
+                    transparent 55%
+                );
+        }
+
+        .room-number {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+
+            z-index: 2;
+
+            color: rgba(255,255,255,.7);
+
+            font-family: var(--serif);
+            font-size: 18px;
+        }
+
+        .room-image-label {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+
+            z-index: 2;
+
+            padding: 10px 14px;
+
+            background: var(--gold);
+            color: var(--black);
+
+            font-size: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .luxury-room-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 70px;
+        }
+
+        .luxury-room-content .room-category {
+            color: var(--gold);
+
+            font-size: 9px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .luxury-room-content h2 {
+            margin-top: 18px;
+
+            font-size: clamp(38px, 4vw, 58px);
+        }
+
+        .luxury-room-content > p {
+            max-width: 470px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+
+        /* =====================================================
+           ROOM DETAILS
+        ===================================================== */
+
+        .room-specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            max-width: 500px;
+
+            margin-top: 35px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .room-spec {
+            padding: 18px 10px;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+        }
+
+        .room-spec:last-child {
+            border-right: none;
+        }
+
+        .room-spec small {
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 7px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .room-spec strong {
+            display: block;
+
+            margin-top: 7px;
+
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .room-amenities {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 25px;
+        }
+
+        .room-amenities span {
+            padding: 8px 11px;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            color: var(--muted);
+
+            font-size: 8px;
+        }
+
+        .room-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .room-rate {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .room-rate strong {
+            font-family: var(--serif);
+
+            font-size: 25px;
+
+            font-weight: 400;
+        }
+
+        .room-rate span {
+            color: var(--muted);
+
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+
+
+        /* =====================================================
+           BOTTOM CTA
+        ===================================================== */
+
+        .rooms-cta {
+            position: relative;
+
+            min-height: 520px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.65)
+                ),
+                url("https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+        }
+
+        .rooms-cta-content {
+            max-width: 700px;
+
+            padding: 30px;
+        }
+
+        .rooms-cta-content h2 {
+            margin-top: 20px;
+
+            font-size: clamp(48px, 6vw, 78px);
+        }
+
+        .rooms-cta-content p {
+            margin: 25px auto 35px;
+
+            color: rgba(255,255,255,.7);
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 900px) {
+
+            .luxury-room,
+            .luxury-room.reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .luxury-room.reverse .luxury-room-image {
+                order: 1;
+            }
+
+            .luxury-room.reverse .luxury-room-content {
+                order: 2;
+            }
+
+            .luxury-room-image {
+                min-height: 500px;
+            }
+
+            .luxury-room-content {
+                padding: 55px 40px;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .rooms-hero {
+                min-height: 650px;
+                padding-bottom: 65px;
+            }
+
+            .rooms-hero-content h1 {
+                font-size: 57px;
+                letter-spacing: -2px;
+            }
+
+            .rooms-intro {
+                padding: 90px 0 60px;
+            }
+
+            .rooms-list {
+                padding-bottom: 80px;
+            }
+
+            .luxury-room {
+                margin-bottom: 60px;
+            }
+
+            .luxury-room-image {
+                min-height: 400px;
+            }
+
+            .luxury-room-content {
+                padding: 45px 25px;
+            }
+
+            .room-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .room-spec {
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,.08);
+            }
+
+            .room-spec:last-child {
+                border-bottom: none;
+            }
+
+            .room-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .rooms-cta {
+                min-height: 500px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+        <span class="logo-main">DSL</span>
+        <span class="logo-sub">HOUSE</span>
+    </a>
+
+    <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="rooms.html" class="active">
+            Rooms
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="experiences.html">
+            Experiences
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+    <a href="booking.html" class="nav-button">
+        Book Your Stay
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="rooms-hero">
+
+    <div class="rooms-hero-content">
+
+        <span class="section-label">
+            YOUR PRIVATE RETREAT
+        </span>
+
+        <h1>
+            Rooms made for
+            <em>beautiful stays.</em>
+        </h1>
+
+        <p>
+            Thoughtfully designed spaces where refined interiors,
+            exceptional comfort and peaceful surroundings come together.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="rooms-intro">
+
+    <span class="section-label">
+        STAY YOUR WAY
+    </span>
+
+    <h2>
+        Find your
+        <span>perfect room.</span>
+    </h2>
+
+    <p>
+        Whether you're visiting for business, escaping for the weekend,
+        or simply looking for somewhere beautiful to slow down,
+        there's a space waiting for you at The DSL House.
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     ROOMS
+===================================================== -->
+
+<section class="rooms-list">
+
+
+    <!-- =================================================
+         ROOM 01
+    ================================================== -->
+
+    <article class="luxury-room">
+
+        <div class="luxury-room-image suite-image">
+
+            <span class="room-number">
+                01
+            </span>
+
+            <span class="room-image-label">
+                Most Popular
+            </span>
+
+        </div>
+
+
+        <div class="luxury-room-content">
+
+            <span class="room-category">
+                Deluxe Accommodation
+            </span>
+
+            <h2>
+                DSL
+                <span>Suite</span>
+            </h2>
+
+            <p>
+                Our signature suite combines generous space with
+                sophisticated design. A private sanctuary featuring
+                premium bedding, elegant furnishings and everything
+                you need for an exceptional stay.
+            </p>
+
+
+            <div class="room-specs">
+
+                <div class="room-spec">
+
+                    <small>
+                        Guests
+                    </small>
+
+                    <strong>
+                        2 Adults
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Bed
+                    </small>
+
+                    <strong>
+                        King
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Size
+                    </small>
+
+                    <strong>
+                        42 m²
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="room-amenities">
+
+                <span>
+                    Private Bathroom
+                </span>
+
+                <span>
+                    Wi-Fi
+                </span>
+
+                <span>
+                    Air Conditioning
+                </span>
+
+                <span>
+                    Smart TV
+                </span>
+
+                <span>
+                    Breakfast
+                </span>
+
+            </div>
+
+
+            <div class="room-actions">
+
+                <div class="room-rate">
+
+                    <strong>
+                        E1,850
+                    </strong>
+
+                    <span>
+                        PER NIGHT
+                    </span>
+
+                </div>
+
+                <a href="room-details.html" class="btn btn-outline">
+                    View Suite
+                    <span>↗</span>
+                </a>
+
+                <a href="booking.html" class="btn btn-gold">
+                    Reserve
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- =================================================
+         ROOM 02
+    ================================================== -->
+
+    <article class="luxury-room reverse">
+
+        <div class="luxury-room-image garden-image">
+
+            <span class="room-number">
+                02
+            </span>
+
+        </div>
+
+
+        <div class="luxury-room-content">
+
+            <span class="room-category">
+                Superior Accommodation
+            </span>
+
+            <h2>
+                Garden
+                <span>Suite</span>
+            </h2>
+
+            <p>
+                Wake up to beautiful surroundings in our Garden Suite.
+                Natural textures, warm tones and generous windows create
+                an inviting space designed for rest and relaxation.
+            </p>
+
+
+            <div class="room-specs">
+
+                <div class="room-spec">
+
+                    <small>
+                        Guests
+                    </small>
+
+                    <strong>
+                        2 Adults
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Bed
+                    </small>
+
+                    <strong>
+                        Queen
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Size
+                    </small>
+
+                    <strong>
+                        35 m²
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="room-amenities">
+
+                <span>
+                    Garden View
+                </span>
+
+                <span>
+                    Wi-Fi
+                </span>
+
+                <span>
+                    Air Conditioning
+                </span>
+
+                <span>
+                    Smart TV
+                </span>
+
+                <span>
+                    Breakfast
+                </span>
+
+            </div>
+
+
+            <div class="room-actions">
+
+                <div class="room-rate">
+
+                    <strong>
+                        E1,550
+                    </strong>
+
+                    <span>
+                        PER NIGHT
+                    </span>
+
+                </div>
+
+                <a href="room-details.html" class="btn btn-outline">
+                    View Suite
+                    <span>↗</span>
+                </a>
+
+                <a href="booking.html" class="btn btn-gold">
+                    Reserve
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- =================================================
+         ROOM 03
+    ================================================== -->
+
+    <article class="luxury-room">
+
+        <div class="luxury-room-image classic-image">
+
+            <span class="room-number">
+                03
+            </span>
+
+        </div>
+
+
+        <div class="luxury-room-content">
+
+            <span class="room-category">
+                Classic Accommodation
+            </span>
+
+            <h2>
+                Classic
+                <span>Room</span>
+            </h2>
+
+            <p>
+                Simple, elegant and exceptionally comfortable.
+                The Classic Room provides everything you need for
+                a relaxed stay without unnecessary excess.
+            </p>
+
+
+            <div class="room-specs">
+
+                <div class="room-spec">
+
+                    <small>
+                        Guests
+                    </small>
+
+                    <strong>
+                        2 Adults
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Bed
+                    </small>
+
+                    <strong>
+                        Queen
+                    </strong>
+
+                </div>
+
+
+                <div class="room-spec">
+
+                    <small>
+                        Size
+                    </small>
+
+                    <strong>
+                        28 m²
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="room-amenities">
+
+                <span>
+                    Private Bathroom
+                </span>
+
+                <span>
+                    Wi-Fi
+                </span>
+
+                <span>
+                    Air Conditioning
+                </span>
+
+                <span>
+                    Smart TV
+                </span>
+
+            </div>
+
+
+            <div class="room-actions">
+
+                <div class="room-rate">
+
+                    <strong>
+                        E1,250
+                    </strong>
+
+                    <span>
+                        PER NIGHT
+                    </span>
+
+                </div>
+
+                <a href="room-details.html" class="btn btn-outline">
+                    View Room
+                    <span>↗</span>
+                </a>
+
+                <a href="booking.html" class="btn btn-gold">
+                    Reserve
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="rooms-cta">
+
+    <div class="rooms-cta-content">
+
+        <span class="section-label">
+            READY WHEN YOU ARE
+        </span>
+
+        <h2>
+            Your perfect stay
+            <span>starts here.</span>
+        </h2>
+
+        <p>
+            Choose your room, select your dates and let us take care
+            of the rest.
+        </p>
+
+        <a href="booking.html" class="btn btn-gold">
+            Check Availability
+            <span>↗</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-main">
+                    DSL
+                </span>
+
+                <span class="logo-sub">
+                    HOUSE
+                </span>
+
+            </a>
+
+            <p>
+                Refined stays. Genuine hospitality.
+                Unforgettable moments.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="rooms.html">
+                Rooms & Suites
+            </a>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="experiences.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTACT
+            </h4>
+
+            <a href="tel:+26800000000">
+                +268 0000 0000
+            </a>
+
+            <a href="mailto:hello@dslhouse.com">
+                hello@dslhouse.com
+            </a>
+
+            <span>
+                Eswatini
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                FOLLOW
+            </h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The DSL House. All rights reserved.
+        </span>
+
+        <span>
+            Designed by <strong>DSL Digital</strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

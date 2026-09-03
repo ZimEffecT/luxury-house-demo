@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Our Story | The DSL House</title>
+
+    <meta
+        name="description"
+        content="Discover the story, philosophy and hospitality behind The Montclair House."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           ABOUT HERO
+        ===================================================== */
+
+        .about-hero {
+
+            position: relative;
+
+            min-height: 76vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 0 5% 90px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.78),
+                    rgba(0,0,0,.28)
+                ),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .about-hero-content {
+
+            width: min(1240px, 100%);
+
+            margin: auto;
+
+        }
+
+
+        .about-hero h1 {
+
+            max-width: 850px;
+
+            margin-top: 25px;
+
+            font-family: var(--serif);
+
+            font-size: clamp(55px, 8vw, 105px);
+
+            font-weight: 400;
+
+            line-height: .94;
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .about-hero h1 em {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+
+        }
+
+
+        .about-hero p {
+
+            max-width: 520px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.72);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           STORY
+        ===================================================== */
+
+        .story-section {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+            display: grid;
+
+            grid-template-columns: .85fr 1.15fr;
+
+            gap: 110px;
+
+        }
+
+
+        .story-intro h2 {
+
+            margin-top: 22px;
+
+        }
+
+
+        .story-intro p {
+
+            max-width: 370px;
+
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .story-content {
+
+            padding-top: 25px;
+
+        }
+
+
+        .story-content .lead {
+
+            font-family: var(--serif);
+
+            font-size: 27px;
+
+            line-height: 1.55;
+
+            color: var(--cream);
+
+        }
+
+
+        .story-content p {
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 2;
+
+        }
+
+
+        .story-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid rgba(200,169,107,.5);
+
+            color: var(--cream);
+
+            font-size: 10px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .story-link span {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           FULL IMAGE
+        ===================================================== */
+
+        .about-image {
+
+            position: relative;
+
+            min-height: 680px;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.55),
+                    transparent 60%
+                ),
+                url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .about-image-caption {
+
+            position: absolute;
+
+            left: 5%;
+
+            bottom: 45px;
+
+            max-width: 400px;
+
+        }
+
+
+        .about-image-caption span {
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+        }
+
+
+        .about-image-caption h2 {
+
+            margin-top: 18px;
+
+            font-size: clamp(38px, 5vw, 65px);
+
+        }
+
+
+        /* =====================================================
+           PHILOSOPHY
+        ===================================================== */
+
+        .philosophy {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+        }
+
+
+        .philosophy-heading {
+
+            max-width: 700px;
+
+        }
+
+
+        .philosophy-heading h2 {
+
+            margin-top: 20px;
+
+        }
+
+
+        .philosophy-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            margin-top: 70px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            border-left: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .philosophy-card {
+
+            min-height: 300px;
+
+            padding: 35px;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .philosophy-number {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 18px;
+
+        }
+
+
+        .philosophy-icon {
+
+            margin-top: 35px;
+
+            color: var(--gold);
+
+            font-size: 25px;
+
+        }
+
+
+        .philosophy-card h3 {
+
+            margin-top: 20px;
+
+            font-family: var(--serif);
+
+            font-size: 25px;
+
+            font-weight: 400;
+
+        }
+
+
+        .philosophy-card p {
+
+            margin-top: 15px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           NUMBERS
+        ===================================================== */
+
+        .numbers {
+
+            padding: 90px 5%;
+
+            background: #11110f;
+
+        }
+
+
+        .numbers-grid {
+
+            width: min(1100px, 100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+
+
+        .number-item {
+
+            text-align: center;
+
+            padding: 20px;
+
+            border-right: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .number-item:last-child {
+
+            border-right: none;
+
+        }
+
+
+        .number-item strong {
+
+            display: block;
+
+            color: var(--gold-light);
+
+            font-family: var(--serif);
+
+            font-size: 52px;
+
+            font-weight: 400;
+
+        }
+
+
+        .number-item span {
+
+            display: block;
+
+            margin-top: 8px;
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           PEOPLE
+        ===================================================== */
+
+        .people {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+        }
+
+
+        .people-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 50px;
+
+        }
+
+
+        .people-heading p {
+
+            max-width: 400px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .people-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 65px;
+
+        }
+
+
+        .person-image {
+
+            height: 420px;
+
+            background-size: cover;
+
+            background-position: center;
+
+        }
+
+
+        .person-one {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=85");
+
+        }
+
+
+        .person-two {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85");
+
+        }
+
+
+        .person-three {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85");
+
+        }
+
+
+        .person-info {
+
+            padding-top: 20px;
+
+        }
+
+
+        .person-info h3 {
+
+            font-family: var(--serif);
+
+            font-size: 24px;
+
+            font-weight: 400;
+
+        }
+
+
+        .person-info span {
+
+            display: block;
+
+            margin-top: 6px;
+
+            color: var(--gold);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           QUOTE
+        ===================================================== */
+
+        .about-quote {
+
+            position: relative;
+
+            min-height: 600px;
+
+            display: grid;
+
+            place-items: center;
+
+            padding: 60px 5%;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.7),
+                    rgba(0,0,0,.7)
+                ),
+                url("https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .quote-content {
+
+            max-width: 850px;
+
+        }
+
+
+        .quote-mark {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 75px;
+
+            line-height: .6;
+
+        }
+
+
+        .quote-content blockquote {
+
+            margin-top: 25px;
+
+            font-family: var(--serif);
+
+            font-size: clamp(28px, 4vw, 48px);
+
+            line-height: 1.35;
+
+        }
+
+
+        .quote-content cite {
+
+            display: block;
+
+            margin-top: 30px;
+
+            color: var(--gold);
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            font-style: normal;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .about-cta {
+
+            width: min(900px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+            text-align: center;
+
+        }
+
+
+        .about-cta h2 {
+
+            margin-top: 20px;
+
+        }
+
+
+        .about-cta p {
+
+            max-width: 550px;
+
+            margin: 25px auto 35px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 900px) {
+
+            .story-section {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+            }
+
+
+            .philosophy-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .people-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .numbers-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .number-item:nth-child(2) {
+
+                border-right: none;
+
+            }
+
+        }
+
+
+        @media(max-width: 600px) {
+
+            .about-hero {
+
+                min-height: 650px;
+
+                padding-bottom: 60px;
+
+            }
+
+
+            .about-hero h1 {
+
+                font-size: 57px;
+
+                letter-spacing: -2px;
+
+            }
+
+
+            .story-section,
+            .philosophy,
+            .people {
+
+                padding: 90px 0;
+
+            }
+
+
+            .about-image {
+
+                min-height: 500px;
+
+            }
+
+
+            .people-heading {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+
+            .people-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .person-image {
+
+                height: 430px;
+
+            }
+
+
+            .numbers-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .number-item {
+
+                border-bottom: 1px solid rgba(255,255,255,.08);
+
+            }
+
+
+            .number-item strong {
+
+                font-size: 40px;
+
+            }
+
+
+            .about-quote {
+
+                min-height: 500px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-main">
+            DSL
+        </span>
+
+        <span class="logo-sub">
+            HOUSE
+        </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="rooms.html">
+            Rooms
+        </a>
+
+        <a href="about.html" class="active">
+            About
+        </a>
+
+        <a href="experiences.html">
+            Experiences
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a
+        href="booking.html"
+        class="nav-button"
+    >
+        Book Your Stay
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="about-hero">
+
+    <div class="about-hero-content">
+
+        <span class="section-label">
+            OUR STORY
+        </span>
+
+        <h1>
+
+            Hospitality with
+            <em>intention.</em>
+
+        </h1>
+
+        <p>
+
+            A boutique guesthouse built around a simple idea:
+            when the details are right, a stay becomes a memory.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STORY
+===================================================== -->
+
+<section class="story-section">
+
+
+    <div class="story-intro">
+
+        <span class="section-label">
+            THE BEGINNING
+        </span>
+
+        <h2>
+
+            A house with
+            <span>a story.</span>
+
+        </h2>
+
+        <p>
+
+            DSL House was created for travellers who want
+            something more personal than a conventional hotel.
+
+        </p>
+
+    </div>
+
+
+    <div class="story-content">
+
+        <p class="lead">
+
+            We wanted to create a place that feels beautiful without
+            feeling distant, luxurious without feeling excessive,
+            and welcoming from the moment you arrive.
+
+        </p>
+
+
+        <p>
+
+            The DSL House began with a passion for hospitality
+            and a belief that the best stays are rarely about how
+            many things a property offers.
+
+        </p>
+
+
+        <p>
+
+            They are about the feeling.
+
+            The quiet morning.
+
+            The comfortable bed.
+
+            The warm welcome after a long journey.
+
+            The conversation over breakfast.
+
+            The sense that, for a little while, you have found
+            somewhere that feels like home.
+
+        </p>
+
+
+        <p>
+
+            Every room, every shared space and every guest interaction
+            has been shaped around that philosophy.
+
+        </p>
+
+
+        <a
+            href="rooms.html"
+            class="story-link"
+        >
+
+            Explore Our Rooms
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMAGE
+===================================================== -->
+
+<section class="about-image">
+
+    <div class="about-image-caption">
+
+        <span>
+            THE DSL PHILOSOPHY
+        </span>
+
+        <h2>
+
+            Luxury is
+            <em>how it feels.</em>
+
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PHILOSOPHY
+===================================================== -->
+
+<section class="philosophy">
+
+    <div class="philosophy-heading">
+
+        <span class="section-label">
+            WHAT WE BELIEVE
+        </span>
+
+        <h2>
+
+            Three principles.
+            <span>One experience.</span>
+
+        </h2>
+
+    </div>
+
+
+    <div class="philosophy-grid">
+
+
+        <article class="philosophy-card">
+
+            <span class="philosophy-number">
+                01
+            </span>
+
+            <div class="philosophy-icon">
+                ◇
+            </div>
+
+            <h3>
+                Thoughtful
+                Details
+            </h3>
+
+            <p>
+
+                From the textures in your room to the way breakfast
+                is served, we believe the smallest details can make
+                the biggest difference.
+
+            </p>
+
+        </article>
+
+
+        <article class="philosophy-card">
+
+            <span class="philosophy-number">
+                02
+            </span>
+
+            <div class="philosophy-icon">
+                ◎
+            </div>
+
+            <h3>
+                Genuine
+                Hospitality
+            </h3>
+
+            <p>
+
+                We believe great hospitality starts with listening,
+                understanding and treating every guest as an individual.
+
+            </p>
+
+        </article>
+
+
+        <article class="philosophy-card">
+
+            <span class="philosophy-number">
+                03
+            </span>
+
+            <div class="philosophy-icon">
+                ✦
+            </div>
+
+            <h3>
+                Effortless
+                Comfort
+            </h3>
+
+            <p>
+
+                Everything has a purpose. Beautiful design,
+                comfortable spaces and thoughtful amenities come
+                together without unnecessary excess.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NUMBERS
+===================================================== -->
+
+<section class="numbers">
+
+    <div class="numbers-grid">
+
+
+        <div class="number-item">
+
+            <strong>
+                12
+            </strong>
+
+            <span>
+                Private Rooms
+            </span>
+
+        </div>
+
+
+        <div class="number-item">
+
+            <strong>
+                4.9
+            </strong>
+
+            <span>
+                Guest Rating
+            </span>
+
+        </div>
+
+
+        <div class="number-item">
+
+            <strong>
+                8+
+            </strong>
+
+            <span>
+                Years Hosting
+            </span>
+
+        </div>
+
+
+        <div class="number-item">
+
+            <strong>
+                2K+
+            </strong>
+
+            <span>
+                Happy Guests
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TEAM
+===================================================== -->
+
+<section class="people">
+
+
+    <div class="people-heading">
+
+        <div>
+
+            <span class="section-label">
+                THE PEOPLE
+            </span>
+
+            <h2>
+
+                Hospitality is
+                <span>personal.</span>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Behind every great stay is a team that genuinely cares.
+            Meet the people who help make DSL House feel like home.
+
+        </p>
+
+    </div>
+
+
+    <div class="people-grid">
+
+
+        <article class="person">
+
+            <div class="person-image person-one"></div>
+
+            <div class="person-info">
+
+                <h3>
+                    Siphosenkhosi Dlamini
+                </h3>
+
+                <span>
+                    Founder & Host
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="person">
+
+            <div class="person-image person-two"></div>
+
+            <div class="person-info">
+
+                <h3>
+                    Amelia Dlamini
+                </h3>
+
+                <span>
+                    Guest Experience
+                </span>
+
+            </div>
+
+        </article>
+
+
+        <article class="person">
+
+            <div class="person-image person-three"></div>
+
+            <div class="person-info">
+
+                <h3>
+                    Sarah Mamba
+                </h3>
+
+                <span>
+                    Hospitality Manager
+                </span>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUOTE
+===================================================== -->
+
+<section class="about-quote">
+
+    <div class="quote-content">
+
+        <div class="quote-mark">
+            “
+        </div>
+
+        <blockquote>
+
+            The best places don't simply give you
+            somewhere to sleep. They give you
+            something to remember.
+
+        </blockquote>
+
+        <cite>
+            — The DSL House
+        </cite>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="about-cta">
+
+    <span class="section-label">
+        COME EXPERIENCE IT
+    </span>
+
+    <h2>
+
+        Your next chapter
+        <span>starts here.</span>
+
+    </h2>
+
+    <p>
+
+        Whether you're travelling for business, celebrating
+        something special or simply looking for somewhere
+        beautiful to disappear for a while, we'd love to welcome you.
+
+    </p>
+
+
+    <a
+        href="booking.html"
+        class="btn btn-gold"
+    >
+
+        Reserve Your Stay
+
+        <span>
+            ↗
+        </span>
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-main">
+                    DSL
+                </span>
+
+                <span class="logo-sub">
+                    HOUSE
+                </span>
+
+            </a>
+
+
+            <p>
+
+                Refined stays.
+                Genuine hospitality.
+                Unforgettable moments.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="rooms.html">
+                Rooms & Suites
+            </a>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="experiences.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTACT
+            </h4>
+
+            <a href="tel:+26800000000">
+                +268 0000 0000
+            </a>
+
+            <a href="mailto:hello@dslhouse.com">
+                hello@dslhouse.com
+            </a>
+
+            <span>
+                Eswatini
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                FOLLOW
+            </h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The DSL House.
+            All rights reserved.
+        </span>
+
+        <span>
+            Designed by
+            <strong>
+                DSL Digital
+            </strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Experiences | The DSL House</title>
+
+    <meta
+        name="description"
+        content="Discover curated experiences, dining, nature, culture and unforgettable moments around The Montclair House."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           EXPERIENCES HERO
+        ===================================================== */
+
+        .experience-hero {
+
+            position: relative;
+
+            min-height: 78vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 0 5% 90px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.78),
+                    rgba(0,0,0,.20)
+                ),
+                url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .experience-hero-content {
+
+            width: min(1240px, 100%);
+
+            margin: auto;
+
+        }
+
+
+        .experience-hero h1 {
+
+            max-width: 900px;
+
+            margin-top: 25px;
+
+            font-family: var(--serif);
+
+            font-size: clamp(55px, 8vw, 105px);
+
+            font-weight: 400;
+
+            line-height: .94;
+
+            letter-spacing: -4px;
+
+        }
+
+
+        .experience-hero h1 em {
+
+            color: var(--gold-light);
+
+            font-style: italic;
+
+        }
+
+
+        .experience-hero p {
+
+            max-width: 540px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.72);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .experience-intro {
+
+            width: min(900px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0 100px;
+
+            text-align: center;
+
+        }
+
+
+        .experience-intro h2 {
+
+            margin-top: 22px;
+
+        }
+
+
+        .experience-intro p {
+
+            max-width: 650px;
+
+            margin: 30px auto 0;
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            line-height: 2;
+
+        }
+
+
+        /* =====================================================
+           FEATURE EXPERIENCE
+        ===================================================== */
+
+        .experience-feature {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.15fr .85fr;
+
+            min-height: 650px;
+
+            background: #11110f;
+
+        }
+
+
+        .experience-feature-image {
+
+            min-height: 650px;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.45),
+                    transparent 55%
+                ),
+                url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .experience-feature-content {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding: 70px;
+
+        }
+
+
+        .experience-feature-content h2 {
+
+            margin-top: 20px;
+
+            font-size: clamp(40px, 5vw, 65px);
+
+        }
+
+
+        .experience-feature-content p {
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 2;
+
+        }
+
+
+        .experience-meta {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            margin-top: 35px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .experience-meta-item {
+
+            padding: 20px 0;
+
+        }
+
+
+        .experience-meta-item:nth-child(2) {
+
+            padding-left: 25px;
+
+            border-left: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .experience-meta-item span {
+
+            display: block;
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .experience-meta-item strong {
+
+            display: block;
+
+            margin-top: 8px;
+
+            font-family: var(--serif);
+
+            font-size: 20px;
+
+            font-weight: 400;
+
+        }
+
+
+        .experience-feature-content .btn {
+
+            width: fit-content;
+
+            margin-top: 35px;
+
+        }
+
+
+        /* =====================================================
+           EXPERIENCE GRID
+        ===================================================== */
+
+        .experience-section {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+        }
+
+
+        .experience-heading {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-end;
+
+            gap: 50px;
+
+        }
+
+
+        .experience-heading h2 {
+
+            margin-top: 20px;
+
+        }
+
+
+        .experience-heading p {
+
+            max-width: 400px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .experience-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 65px;
+
+        }
+
+
+        .experience-card {
+
+            position: relative;
+
+            min-height: 560px;
+
+            overflow: hidden;
+
+            background: #11110f;
+
+        }
+
+
+        .experience-card-image {
+
+            position: absolute;
+
+            inset: 0;
+
+            background-position: center;
+
+            background-size: cover;
+
+            transition: transform .7s ease;
+
+        }
+
+
+        .experience-card:hover .experience-card-image {
+
+            transform: scale(1.05);
+
+        }
+
+
+        .experience-card-image::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    0deg,
+                    rgba(0,0,0,.82),
+                    rgba(0,0,0,.05) 70%
+                );
+
+        }
+
+
+        .dining-image {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=90");
+
+        }
+
+
+        .nature-image {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=90");
+
+        }
+
+
+        .culture-image {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&w=1600&q=90");
+
+        }
+
+
+        .romance-image {
+
+            background-image:
+                url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1600&q=90");
+
+        }
+
+
+        .experience-card-content {
+
+            position: absolute;
+
+            left: 35px;
+            right: 35px;
+            bottom: 35px;
+
+            z-index: 2;
+
+        }
+
+
+        .experience-card-number {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 18px;
+
+        }
+
+
+        .experience-card-content h3 {
+
+            margin-top: 15px;
+
+            font-family: var(--serif);
+
+            font-size: 36px;
+
+            font-weight: 400;
+
+        }
+
+
+        .experience-card-content p {
+
+            max-width: 430px;
+
+            margin-top: 12px;
+
+            color: rgba(255,255,255,.68);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .experience-card-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 20px;
+
+            color: var(--cream);
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .experience-card-link span {
+
+            color: var(--gold);
+
+        }
+
+
+        /* =====================================================
+           LOCAL DISCOVERY
+        ===================================================== */
+
+        .discovery {
+
+            background: #11110f;
+
+            padding: 140px 5%;
+
+        }
+
+
+        .discovery-inner {
+
+            width: min(1240px, 100%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: .7fr 1.3fr;
+
+            gap: 100px;
+
+        }
+
+
+        .discovery-intro h2 {
+
+            margin-top: 20px;
+
+        }
+
+
+        .discovery-intro p {
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .discovery-list {
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .discovery-item {
+
+            display: grid;
+
+            grid-template-columns: 70px 1fr 90px;
+
+            align-items: center;
+
+            gap: 25px;
+
+            padding: 28px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+
+        }
+
+
+        .discovery-item-number {
+
+            color: var(--gold);
+
+            font-family: var(--serif);
+
+            font-size: 18px;
+
+        }
+
+
+        .discovery-item h3 {
+
+            font-family: var(--serif);
+
+            font-size: 22px;
+
+            font-weight: 400;
+
+        }
+
+
+        .discovery-item p {
+
+            margin-top: 6px;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .discovery-distance {
+
+            color: var(--muted);
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+            text-align: right;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           PRIVATE EXPERIENCES
+        ===================================================== */
+
+        .private-experience {
+
+            width: min(1240px, 90%);
+
+            margin: auto;
+
+            padding: 140px 0;
+
+        }
+
+
+        .private-box {
+
+            position: relative;
+
+            min-height: 500px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.64),
+                    rgba(0,0,0,.64)
+                ),
+                url("https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=2200&q=90")
+                center / cover no-repeat;
+
+        }
+
+
+        .private-content {
+
+            max-width: 700px;
+
+            padding: 40px;
+
+        }
+
+
+        .private-content h2 {
+
+            margin-top: 20px;
+
+            font-size: clamp(42px, 6vw, 70px);
+
+        }
+
+
+        .private-content p {
+
+            margin: 25px auto 35px;
+
+            max-width: 550px;
+
+            color: rgba(255,255,255,.7);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .experience-cta {
+
+            width: min(900px, 90%);
+
+            margin: auto;
+
+            padding: 120px 0 150px;
+
+            text-align: center;
+
+        }
+
+
+        .experience-cta h2 {
+
+            margin-top: 20px;
+
+        }
+
+
+        .experience-cta p {
+
+            max-width: 560px;
+
+            margin: 25px auto 35px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width: 900px) {
+
+            .experience-feature {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .experience-feature-image {
+
+                min-height: 500px;
+
+            }
+
+
+            .discovery-inner {
+
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+
+            }
+
+
+            .experience-heading {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+
+        @media(max-width: 650px) {
+
+            .experience-hero {
+
+                min-height: 650px;
+
+                padding-bottom: 60px;
+
+            }
+
+
+            .experience-hero h1 {
+
+                font-size: 57px;
+
+                letter-spacing: -2px;
+
+            }
+
+
+            .experience-intro,
+            .experience-section,
+            .private-experience {
+
+                padding: 90px 0;
+
+            }
+
+
+            .experience-feature-content {
+
+                padding: 45px 25px;
+
+            }
+
+
+            .experience-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .experience-card {
+
+                min-height: 500px;
+
+            }
+
+
+            .discovery {
+
+                padding: 90px 5%;
+
+            }
+
+
+            .discovery-item {
+
+                grid-template-columns: 45px 1fr;
+
+            }
+
+
+            .discovery-distance {
+
+                display: none;
+
+            }
+
+
+            .private-box {
+
+                min-height: 500px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+    <a href="index.html" class="logo">
+
+        <span class="logo-main">
+            DSL
+        </span>
+
+        <span class="logo-sub">
+            HOUSE
+        </span>
+
+    </a>
+
+
+    <nav class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="rooms.html">
+            Rooms
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a
+            href="experiences.html"
+            class="active"
+        >
+            Experiences
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <a
+        href="booking.html"
+        class="nav-button"
+    >
+        Book Your Stay
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        aria-label="Open menu"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="experience-hero">
+
+    <div class="experience-hero-content">
+
+        <span class="section-label">
+            DISCOVER MORE
+        </span>
+
+        <h1>
+
+            Stay for the night.
+            <em>Leave with memories.</em>
+
+        </h1>
+
+        <p>
+
+            From quiet mornings and beautiful dinners to
+            unforgettable days exploring the world beyond
+            our doors, your stay can be exactly what you make it.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="experience-intro">
+
+    <span class="section-label">
+        THE DSL EXPERIENCE
+    </span>
+
+    <h2>
+
+        More than a place
+        <span>to stay.</span>
+
+    </h2>
+
+    <p>
+
+        We've curated experiences for guests who want to slow down,
+        explore, celebrate and experience the destination beyond
+        the walls of their room.
+
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURE EXPERIENCE
+===================================================== -->
+
+<section class="experience-feature">
+
+
+    <div class="experience-feature-image"></div>
+
+
+    <div class="experience-feature-content">
+
+        <span class="section-label">
+            OUR SIGNATURE EXPERIENCE
+        </span>
+
+        <h2>
+
+            A slower
+            <span>morning.</span>
+
+        </h2>
+
+        <p>
+
+            Wake without an alarm. Let the morning light fill your room.
+            Enjoy freshly prepared breakfast and take your time.
+
+            At DSL House, we believe mornings should never feel
+            rushed.
+
+        </p>
+
+
+        <div class="experience-meta">
+
+            <div class="experience-meta-item">
+
+                <span>
+                    Best For
+                </span>
+
+                <strong>
+                    Couples & Relaxation
+                </strong>
+
+            </div>
+
+
+            <div class="experience-meta-item">
+
+                <span>
+                    Available
+                </span>
+
+                <strong>
+                    Every Morning
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="booking.html"
+            class="btn btn-gold"
+        >
+
+            Plan Your Stay
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE GRID
+===================================================== -->
+
+<section class="experience-section">
+
+
+    <div class="experience-heading">
+
+        <div>
+
+            <span class="section-label">
+                CURATED MOMENTS
+            </span>
+
+            <h2>
+
+                Something for
+                <span>every mood.</span>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Whether you're looking for adventure, relaxation,
+            great food or meaningful experiences, let us help
+            you create your perfect day.
+
+        </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+
+        <!-- DINING -->
+
+        <article class="experience-card">
+
+            <div class="experience-card-image dining-image"></div>
+
+            <div class="experience-card-content">
+
+                <span class="experience-card-number">
+                    01
+                </span>
+
+                <h3>
+                    Dining
+                </h3>
+
+                <p>
+
+                    Discover exceptional local flavours,
+                    intimate dining spaces and memorable
+                    meals worth talking about.
+
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="experience-card-link"
+                >
+
+                    Discover Dining
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- NATURE -->
+
+        <article class="experience-card">
+
+            <div class="experience-card-image nature-image"></div>
+
+            <div class="experience-card-content">
+
+                <span class="experience-card-number">
+                    02
+                </span>
+
+                <h3>
+                    Nature
+                </h3>
+
+                <p>
+
+                    Step outside and discover peaceful landscapes,
+                    scenic walks and the natural beauty surrounding
+                    the region.
+
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="experience-card-link"
+                >
+
+                    Explore Nature
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CULTURE -->
+
+        <article class="experience-card">
+
+            <div class="experience-card-image culture-image"></div>
+
+            <div class="experience-card-content">
+
+                <span class="experience-card-number">
+                    03
+                </span>
+
+                <h3>
+                    Culture
+                </h3>
+
+                <p>
+
+                    Experience local traditions, creative spaces,
+                    history and the stories that make the destination
+                    unique.
+
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="experience-card-link"
+                >
+
+                    Discover Culture
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- ROMANCE -->
+
+        <article class="experience-card">
+
+            <div class="experience-card-image romance-image"></div>
+
+            <div class="experience-card-content">
+
+                <span class="experience-card-number">
+                    04
+                </span>
+
+                <h3>
+                    Romance
+                </h3>
+
+                <p>
+
+                    Private dinners, beautiful sunsets and quiet
+                    moments designed for two.
+
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="experience-card-link"
+                >
+
+                    Plan Something Special
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISCOVERY
+===================================================== -->
+
+<section class="discovery">
+
+    <div class="discovery-inner">
+
+
+        <div class="discovery-intro">
+
+            <span class="section-label">
+                BEYOND THE HOUSE
+            </span>
+
+            <h2>
+
+                Discover what's
+                <span>nearby.</span>
+
+            </h2>
+
+            <p>
+
+                Our team can help you discover the places,
+                restaurants and experiences that make the
+                destination worth exploring.
+
+            </p>
+
+
+            <a
+                href="contact.html"
+                class="story-link"
+            >
+
+                Ask Our Team
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="discovery-list">
+
+
+            <div class="discovery-item">
+
+                <div class="discovery-item-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Local Dining
+                    </h3>
+
+                    <p>
+                        From relaxed cafés to special occasion
+                        dining.
+                    </p>
+
+                </div>
+
+                <div class="discovery-distance">
+                    Nearby
+                </div>
+
+            </div>
+
+
+            <div class="discovery-item">
+
+                <div class="discovery-item-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Scenic Escapes
+                    </h3>
+
+                    <p>
+                        Beautiful places for walking,
+                        photography and quiet moments.
+                    </p>
+
+                </div>
+
+                <div class="discovery-distance">
+                    Easy Access
+                </div>
+
+            </div>
+
+
+            <div class="discovery-item">
+
+                <div class="discovery-item-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Shopping
+                    </h3>
+
+                    <p>
+                        Explore local boutiques, markets and
+                        unique finds.
+                    </p>
+
+                </div>
+
+                <div class="discovery-distance">
+                    Nearby
+                </div>
+
+            </div>
+
+
+            <div class="discovery-item">
+
+                <div class="discovery-item-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        Local Culture
+                    </h3>
+
+                    <p>
+                        Discover the history, people and stories
+                        of the destination.
+                    </p>
+
+                </div>
+
+                <div class="discovery-distance">
+                    Recommended
+                </div>
+
+            </div>
+
+
+            <div class="discovery-item">
+
+                <div class="discovery-item-number">
+                    05
+                </div>
+
+                <div>
+
+                    <h3>
+                        Special Events
+                    </h3>
+
+                    <p>
+                        Let us help you find what's happening
+                        during your stay.
+                    </p>
+
+                </div>
+
+                <div class="discovery-distance">
+                    Seasonal
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PRIVATE EXPERIENCE
+===================================================== -->
+
+<section class="private-experience">
+
+    <div class="private-box">
+
+        <div class="private-content">
+
+            <span class="section-label">
+                MAKE IT YOURS
+            </span>
+
+            <h2>
+
+                Tell us what
+                <span>you love.</span>
+
+            </h2>
+
+            <p>
+
+                Celebrating something special?
+                Planning a romantic escape?
+                Need help creating the perfect itinerary?
+
+                Our team is here to make it happen.
+
+            </p>
+
+
+            <a
+                href="contact.html"
+                class="btn btn-gold"
+            >
+
+                Talk To Our Team
+
+                <span>
+                    ↗
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="experience-cta">
+
+    <span class="section-label">
+        YOUR STAY AWAITS
+    </span>
+
+    <h2>
+
+        Come for the room.
+        <span>Stay for the experience.</span>
+
+    </h2>
+
+    <p>
+
+        Find your room and start planning your next escape
+        at The DSL House.
+
+    </p>
+
+
+    <a
+        href="rooms.html"
+        class="btn btn-gold"
+    >
+
+        Explore Rooms
+
+        <span>
+            →
+        </span>
+
+    </a>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-main">
+                    DSL
+                </span>
+
+                <span class="logo-sub">
+                    HOUSE
+                </span>
+
+            </a>
+
+
+            <p>
+
+                Refined stays.
+                Genuine hospitality.
+                Unforgettable moments.
+
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                EXPLORE
+            </h4>
+
+            <a href="rooms.html">
+                Rooms & Suites
+            </a>
+
+            <a href="about.html">
+                Our Story
+            </a>
+
+            <a href="experiences.html">
+                Experiences
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                CONTACT
+            </h4>
+
+            <a href="tel:+26800000000">
+                +268 0000 0000
+            </a>
+
+            <a href="mailto:hello@dslhouse.com">
+                hello@dslhouse.com
+            </a>
+
+            <span>
+                Eswatini
+            </span>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                FOLLOW
+            </h4>
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 The DSL House.
+            All rights reserved.
+        </span>
+
+        <span>
+            Designed by
+            <strong>
+                DSL Digital
+            </strong>
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
